@@ -1,39 +1,31 @@
 @font-face {
-    font-family: 'RobotoSerif';
-    src: url('../fonts/RobotoSerif28pt-Medium.woff2') format('woff2');
+    font-family: 'Roboto Serif 28pt';
+    src: url('../fonts/') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'RobotoSerif';
+    font-family: 'Roboto Serif 28pt';
     src: url('../fonts/RobotoSerif28pt-Regular.woff2') format('woff2');
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'RobotoSerif';
+    font-family: 'Roboto Serif 28pt';
     src: url('../fonts/RobotoSerif28pt-Bold.woff2') format('woff2');
-    font-weight: 700;
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'RobotoSerif';
+    font-family: 'Roboto Serif 28pt';
     src: url('../fonts/RobotoSerif28pt-Italic.woff2') format('woff2');
-    font-weight: 400;
+    font-weight: normal;
     font-style: italic;
     font-display: swap;
-}
-
-/* Базовый шрифт по всему сайту */
-body {
-    font-family: 'RobotoSerif', sans-serif;
-    font-weight: 400;
-    color: #222;
-    background-color: #fff;
 }

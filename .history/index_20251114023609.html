@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechnoMix — интернет-магазин электроники</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <!-- Бургер-меню -->
+    <nav class="burger-menu" id="burgerMenu">
+      <ul class="burger-menu__list">
+        <li class="burger-menu__item"><a href="#">Заказы</a></li>
+        <li class="burger-menu__item"><a href="#">Переписка с продовцами</a></li>
+        <li class="burger-menu__item"><a href="#">Корзина</a></li>
+        <li class="burger-menu__item"><a href="#">Список желаний</a></li>
+        <li class="burger-menu__item"><a href="#">Просмотреные товары</a></li>
+        <li class="burger-menu__item"><a href="#">Отзывы</a></li>
+        <li class="burger-menu__item"><a href="#">Посылки</a></li>
+        <li class="burger-menu__item"><a href="#">Кошелек</a></li>
+        <li class="burger-menu__item"><a href="#">Подписки</a></li>
+      </ul>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <div class="container header__inner">
+
+      <button class="header__burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="header__logo">
+        <a href="#">TechnoMix</a>
+      </div>
+
+      <form class="header__search" action="#" method="get">
+        <input type="text" class="header__input" placeholder="Что вы ищете?" name="s">
+        <button type="submit" class="header__search-btn" aria-label="Найти"></button>
+      </form>
+
+      <div class="header__cart">
+        <img src="assets/images/cart.svg" alt="Корзина">
+        <span class="header__cart-count">0</span>
+      </div>
+
+    </div>
+  </header>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

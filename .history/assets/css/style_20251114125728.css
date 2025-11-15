@@ -30,20 +30,13 @@
     font-display: swap;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 body {
     font-family: 'RobotoSerif', sans-serif;
     font-weight: 400;
     color: #222;
     background-color: #F2F2F2;
     padding-top: 70px;
-    display: flex;
-    flex-direction: column;
-
+    /* чтобы контент не прятался за фиксированной шапкой */
 }
 
 /* HEADER */
@@ -142,18 +135,11 @@ body {
     width: 22px;
     height: 22px;
     opacity: 0.85;
-    transition: 0.2s ease;
     flex-shrink: 0;
 }
 
 .burger-menu__item a:hover {
-    background: #FF9500;
-    color: #fff;
-}
-
-.burger-menu__item a:hover img {
-    filter: brightness(0) invert(1);
-    opacity: 1;
+    background: #ddd;
 }
 
 /* Анимация иконки бургера */
@@ -259,45 +245,4 @@ body {
 .overlay.active {
     opacity: 1;
     visibility: visible;
-}
-
-.footer {
-    margin-top: auto;
-    background: #373841;
-    padding: 25px 15px;
-    color: #fff;
-}
-
-.footer__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.footer__social {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 15px;
-}
-
-.footer__social img {
-    width: 28px;
-    height: 28px;
-    opacity: 0.85;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.footer__social a:hover img {
-    transform: scale(1.18);
-    /* плавное увеличение */
-    opacity: 1;
-    /* чуть ярче */
-}
-
-
-.footer__copy {
-    font-size: 14px;
-    opacity: 0.75;
 }

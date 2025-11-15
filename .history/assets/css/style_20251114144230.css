@@ -286,14 +286,12 @@ body {
     width: 28px;
     height: 28px;
     opacity: 0.85;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+    transition: 0.2s ease;
 }
 
 .footer__social a:hover img {
-    transform: scale(1.18);
-    /* плавное увеличение */
+    filter: brightness(0) invert(1);
     opacity: 1;
-    /* чуть ярче */
 }
 
 

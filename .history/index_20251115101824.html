@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechnoMix — интернет-магазин электроники</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <!-- Бургер-меню -->
+    <nav class="burger-menu" id="burgerMenu">
+      <ul class="burger-menu__list">
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/orders.svg" alt="">
+            Заказы
+          </a>
+        </li>
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/messages.svg" alt="">
+            Переписка с продавцами
+          </a>
+        </li>
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/cart.svg" alt="">
+            Корзина
+          </a>
+        </li>
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/heart.svg" alt="">
+            Список желаний
+          </a>
+        </li>
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/history.svg" alt="">
+            Просмотренные товары
+          </a>
+        </li>
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/reviews.svg" alt="">
+            Отзывы
+          </a>
+        </li>
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/parcel.svg" alt="">
+            Посылки
+          </a>
+        </li>
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/wallet.svg" alt="">
+            Кошелёк
+          </a>
+        </li>
+
+        <li class="burger-menu__item">
+          <a href="#">
+            <img src="assets/images/icons/subscribe.svg" alt="">
+            Подписки
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="container header__inner">
+
+      <button class="header__burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="header__logo">
+        <a href="#">TechnoMix</a>
+      </div>
+
+      <form class="header__search" action="#" method="get">
+        <input type="text" class="header__input" placeholder="Что вы ищете?" name="s">
+        <button type="submit" class="header__search-btn" aria-label="Найти"></button>
+      </form>
+
+      <div class="header__cart">
+        <img src="assets/images/icons/cart.svg" alt="Корзина">
+        <span class="header__cart-count">0</span>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container main-layout">
+      <!-- SIDEBAR + MEGA в одном wrapper -->
+      <div class="sidebar-wrapper">
+
+        <!-- Самый левый сайдбар -->
+        <aside class="sidebar">
+          <ul class="sidebar__list">
+            <li class="sidebar__item">
+              <a href="#">
+                <img src="assets/images/icons/power.svg" alt="" class="ico">
+                <span>Энергообеспечение</span>
+              </a>
+              <!-- Мега-панель, которая появится при hover на этом item -->
+              <div class="mega">
+                <div class="mega__col">
+                  <h4>Зарядные станции</h4>
+                  <ul>
+                    <li><a href="#">Bluetti</a></li>
+                    <li><a href="#">Anker</a></li>
+                    <li><a href="#">EcoFlow</a></li>
+                    <li><a href="#">Jackery</a></li>
+                    <li><a href="#">Все зарядные станции</a></li>
+                  </ul>
+                </div>
+
+                <div class="mega__col">
+                  <h4>Солнечные инверторы</h4>
+                  <ul>
+                    <li><a href="#">Гибридные инверторы</a></li>
+                    <li><a href="#">Автономные инверторы</a></li>
+                    <li><a href="#">Солнечные инверторы — все</a></li>
+                  </ul>
+                </div>
+
+                <div class="mega__col">
+                  <h4>Системы хранения энергии</h4>
+                  <ul>
+                    <li><a href="#">EcoFlow</a></li>
+                    <li><a href="#">Solis</a></li>
+                    <li><a href="#">Deye</a></li>
+                    <li><a href="#">Системы хранения — все</a></li>
+                  </ul>
+                </div>
+
+                <div class="mega__col">
+                  <h4>Мобильные батареи</h4>
+                  <ul>
+                    <li><a href="#">от 10000 до 19999 мАч</a></li>
+                    <li><a href="#">от 20000 до 29999 мАч</a></li>
+                    <li><a href="#">30000 мАч и больше</a></li>
+                    <li><a href="#">Смотреть все</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <!-- Примеры других пунктов (без мега) -->
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/phone.svg" class="ico"
+                  alt=""><span>Смартфоны и телефоны</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/laptop.svg" class="ico"
+                  alt=""><span>Ноутбуки, планшеты и ПК</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/kitchen.svg" class="ico"
+                  alt=""><span>Техника для кухни</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/home.svg" class="ico"
+                  alt=""><span>Техника для дома</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/tv.svg" class="ico"
+                  alt=""><span>Телевизоры</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/game.svg" class="ico"
+                  alt=""><span>Игровые консоли и гейминг</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/beauty.svg" class="ico"
+                  alt=""><span>Красота и здоровье</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/dishes.svg" class="ico"
+                  alt=""><span>Посуда</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/chemistry.svg" class="ico"
+                  alt=""><span>Бытовая химия</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/textile.svg" class="ico"
+                  alt=""><span>Текстиль и декор</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/outdoor.svg" class="ico"
+                  alt=""><span>Дом, отдых</span></a></li>
+            <li class="sidebar__item"><a href="#"><img src="assets/images/icons/kids.svg" class="ico"
+                  alt=""><span>Детские товары</span></a></li>
+          </ul>
+        </aside>
+
+        <!-- Главное пространство справа (товары) -->
+        <div class="content">
+          <!-- Здесь будет твой список товаров / грид карточек -->
+          <h2>Товары</h2>
+          <p>Здесь отображается список товаров — при наведении на пункт слева появляется мега-панель справа.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <ul class="footer__social">
+        <li><a href="#"><img src="assets/images/icons/twitter.svg" alt="Twitter"></a></li>
+        <li><a href="#"><img src="assets/images/icons/youtube.svg" alt="YouTube"></a></li>
+        <li><a href="#"><img src="assets/images/icons/facebook.svg" alt="Facebook"></a></li>
+        <li><a href="#"><img src="assets/images/icons/whatsapp.svg" alt="WhatsApp"></a></li>
+        <li><a href="#"><img src="assets/images/icons/phone.svg" alt="Phone"></a></li>
+      </ul>
+      <p class="footer__copy">© 2025. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

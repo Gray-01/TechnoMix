@@ -59,7 +59,7 @@ body {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -302,132 +302,181 @@ body {
     opacity: 0.75;
 }
 
-/* main */
-.main {
-    flex: 1 0 auto;
-    padding: 40px 260px;
-    border: 1px solid red;
-}
-
-/* ограничивающий контейнер внутри main */
-.main__wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-    border: 1px solid green;
-}
-
-
-
 /* start sidebar */
+/* --- контейнер ограничивающий (если у тебя уже есть .container корректно — можно пропустить) --- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    /* <- здесь контролируем левый и правый отступы */
+    margin: 0 auto;
+    padding: 0 16px;
+}
 
-/* ОБЩАЯ ОБЛАСТЬ */
-.catalog-section {
+/* wrapper: sidebar + content */
+.sidebar-wrapper {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     align-items: flex-start;
-}
-
-/* SIDEBAR */
-.sidebar {
-    width: 300px;
-    height: 575px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* КАРУСЕЛЬ */
-.carousel {
-    flex: 1;
-    height: 575px;
     position: relative;
+    /* важно для абсолютного позиционирования мега */
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 260px;
+    /* ширина сайдбара */
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    overflow: hidden;
-}
-
-/* карточки */
-.carousel__inner {
-    display: flex;
-    gap: 20px;
-    height: 100%;
-    transition: transform 0.5s ease;
-    /* Плавная анимация */
-}
-
-.card {
-    min-width: calc((100% - 60px) / 4);
-    /* 4 карточки видно одновременно */
-    height: 100%;
-    background: #f2f2f2;
     border-radius: 10px;
-    font-size: 40px;
+    padding: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 10;
+}
+
+/* список внутри сайдбара */
+.sidebar__list {
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* единая строка: иконка + текст */
+.sidebar__item>a {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    /* Предотвращаем сжатие карточек */
-    overflow: hidden;
-    /* Обрезаем выходящие за границы части */
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #222;
+    background: #F7F7F7;
+    transition: background .18s ease, transform .12s ease;
 }
 
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Заполняет контейнер без искажений */
+/* визуал для "активного" ховера в списке */
+.sidebar__item>a:hover {
+    background: #eef6f2;
+    transform: translateX(3px);
+}
+
+/* иконки */
+.sidebar__item img.ico {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
     display: block;
 }
 
-/* стрелки */
-.carousel__btn {
+/* название */
+.sidebar__item span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* --- MEGA панель (по умолчанию скрыта) --- */
+.mega {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: none;
+    left: calc(260px + 24px);
+    /* справа от сайдбара + gap */
+    top: 8px;
+    width: calc(100% - (260px + 24px));
+    /* займет всё правое пространство в контейнере */
+    max-width: 760px;
     background: #fff;
-    cursor: pointer;
-    font-size: 24px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: 0.2s;
-}
-
-.carousel__btn:hover {
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel__btn--prev {
-    left: 10px;
-}
-
-.carousel__btn--next {
-    right: 10px;
-}
-
-/* точки */
-.carousel__dots {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
     display: flex;
-    gap: 10px;
-    display: none;
+    gap: 36px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity .16s ease, transform .18s ease, visibility .16s;
+    z-index: 9;
 }
 
-.carousel__dots .dot {
-    width: 10px;
-    height: 10px;
-    background: #ccc;
-    border-radius: 50%;
+/* колонки в мега панели */
+.mega__col {
+    min-width: 180px;
 }
 
-.carousel__dots .dot.active {
-    background: #333;
+.mega__col h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.mega__col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mega__col li {
+    margin-bottom: 6px;
+}
+
+.mega__col a {
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.95;
+}
+
+/* Когда наводим на сам item (или на .mega), показываем панель.
+   Мы используем правило :hover на .sidebar__item чтобы открывалась панель.
+   Также позволим .mega оставаться видимой, если курсор на ней (чтобы не закрывалась при движении).
+*/
+.sidebar__item:hover>.mega,
+.sidebar__item>.mega:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Чтобы панель оставалась видимой, когда пользователь переходит курсором
+   от item к самой панели, сделаем дополнительное правило: если wrapper:hover и
+   курсор на sidebar-wrapper, показываем панель соответствующего item.
+   (в большинстве случаев :hover на item + :hover на mega уже достаточно)
+*/
+
+/* --- Корректируем поведение при узких экранах --- */
+@media (max-width: 980px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .mega {
+        left: calc(220px + 16px);
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 720px) {
+
+    /* на мобильных прячем мега-панели и ставим сайдбар как обычный блок перед контентом */
+    .sidebar-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .mega {
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: 12px 8px;
+        display: none;
+    }
+
+    /* (если нужно отображать подкатегории на мобиле, можно включать .mega через JS по клику) */
 }

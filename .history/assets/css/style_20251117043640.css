@@ -359,8 +359,6 @@ body {
 }
 
 .card {
-    min-width: calc((100% - 60px) / 4);
-    /* 4 карточки видно одновременно */
     height: 100%;
     background: #f2f2f2;
     border-radius: 10px;

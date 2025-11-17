@@ -354,13 +354,11 @@ body {
     display: flex;
     gap: 20px;
     height: 100%;
-    transition: transform 0.5s ease;
-    /* Плавная анимация */
 }
 
 .card {
-    min-width: calc((100% - 60px) / 4);
-    /* 4 карточки видно одновременно */
+    width: calc((100% - 60px) / 4);
+    /* 4 карточки + 3 промежутка по 20px */
     height: 100%;
     background: #f2f2f2;
     border-radius: 10px;

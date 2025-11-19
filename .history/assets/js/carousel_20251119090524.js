@@ -7,7 +7,7 @@ class Carousel {
         this.nextBtn = container.querySelector('.carousel__btn--next');
 
         this.currentIndex = 0;
-        this.cardsPerView = 3; // Оставляем 3 карточки для всех экранов
+        this.cardsPerView = 3;
         this.totalCards = this.cards.length;
         this.autoPlayInterval = null;
 
@@ -25,12 +25,6 @@ class Carousel {
         // Остановка авто-прокрутки при наведении
         this.container.addEventListener('mouseenter', () => this.stopAutoPlay());
         this.container.addEventListener('mouseleave', () => this.startAutoPlay());
-
-        // Для тач-устройств - остановка авто-прокрутки при касании
-        this.container.addEventListener('touchstart', () => this.stopAutoPlay());
-        this.container.addEventListener('touchend', () => {
-            setTimeout(() => this.startAutoPlay(), 3000);
-        });
     }
 
     updateCarousel() {

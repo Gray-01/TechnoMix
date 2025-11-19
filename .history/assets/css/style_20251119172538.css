@@ -262,8 +262,7 @@ body {
 
 .footer {
     margin-top: auto;
-    /* background: #373841; */
-    background: linear-gradient(to top, #000000, #01042d);
+    background: #373841;
     padding: 25px 15px;
     color: #fff;
 }
@@ -657,7 +656,7 @@ body {
 }
 
 .about-section {
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 20px 20px 0 0;
     overflow: hidden;
     margin-top: 20px;
 }

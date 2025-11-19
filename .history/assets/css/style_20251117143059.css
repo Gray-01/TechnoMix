@@ -169,6 +169,7 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+
 /* логотип */
 .header__logo a {
     font-family: 'RobotoSerif', sans-serif;
@@ -262,8 +263,7 @@ body {
 
 .footer {
     margin-top: auto;
-    /* background: #373841; */
-    background: linear-gradient(to top, #000000, #01042d);
+    background: #373841;
     padding: 25px 15px;
     color: #fff;
 }
@@ -320,106 +320,16 @@ body {
 
 
 /* start sidebar */
-
-/* ОБЩАЯ ОБЛАСТЬ */
-.catalog-section {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-/* SIDEBAR */
+/* SIDEBAR STYLES */
 .sidebar {
     width: 300px;
     height: 575px;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* КАРУСЕЛЬ */
-.carousel {
-    flex: 1;
-    height: 575px;
+    padding: 20px 0;
+    overflow: hidden;
     position: relative;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 20px 0;
-    overflow: hidden;
-}
-
-/* карточки */
-.carousel__inner {
-    display: flex;
-    gap: 20px;
-    height: 100%;
-    transition: transform 0.5s ease;
-    padding: 0 20px;
-}
-
-.card {
-    width: calc((100% - 40px) / 3);
-    height: 100%;
-    background: #f2f2f2;
-    border-radius: 10px;
-    font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    /* Предотвращаем сжатие карточек */
-    overflow: hidden;
-    /* Обрезаем выходящие за границы части */
-    cursor: pointer;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Заполняет контейнер без искажений */
-    display: block;
-}
-
-/* стрелки */
-.carousel__btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: none;
-    background: #fff;
-    cursor: pointer;
-    font-size: 24px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: 0.2s;
-}
-
-.carousel__btn:hover {
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel__btn--prev {
-    left: 10px;
-}
-
-.carousel__btn--next {
-    right: 10px;
-}
-
-/* sidebar start */
-/* SIDEBAR */
-.sidebar {
-    width: 300px;
-    height: 575px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 20px 0;
-    overflow: hidden;
 }
 
 .sidebar__nav {
@@ -432,10 +342,14 @@ body {
     flex-direction: column;
     height: 100%;
     overflow-y: auto;
+    margin: 0;
+    padding: 0;
 }
 
+/* ВАЖНО: возвращаем relative для sidebar__item */
 .sidebar__item {
     border-bottom: 1px solid #f0f0f0;
+    position: relative;
 }
 
 .sidebar__item:last-child {
@@ -485,7 +399,160 @@ body {
     flex: 1;
 }
 
-/* Стили для скроллбара */
+.sidebar__link:hover .sidebar__icon {
+    background: #FF9500;
+}
+
+.sidebar__link:hover .sidebar__icon img {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+/* DROPDOWN MENU STYLES - ИСПРАВЛЕННАЯ ВЕРСИЯ */
+.dropdown-menu {
+    position: absolute;
+    left: 300px;
+    /* Фиксированная позиция - ширина сайдбара */
+    top: -20px;
+    /* Компенсируем padding сайдбара */
+    width: 900px;
+    height: 575px;
+    background: #fff;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.sidebar__item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    height: 100%;
+}
+
+.dropdown-category {
+    margin-bottom: 25px;
+}
+
+.dropdown-category__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #FF9500;
+}
+
+.dropdown-category__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-category__list li {
+    margin-bottom: 8px;
+}
+
+.dropdown-category__list a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 4px 0;
+}
+
+.dropdown-category__list a:hover {
+    color: #FF9500;
+}
+
+/* КАРУСЕЛЬ */
+.carousel {
+    flex: 1;
+    height: 575px;
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    overflow: hidden;
+}
+
+.carousel__inner {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    min-width: calc((100% - 60px) / 4);
+    height: 100%;
+    background: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
+    z-index: 10;
+}
+
+.carousel__btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel__btn--prev {
+    left: 10px;
+}
+
+.carousel__btn--next {
+    right: 10px;
+}
+
+/* LAYOUT */
+.catalog-section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* СКРОЛЛБАРЫ */
 .sidebar__menu::-webkit-scrollbar {
     width: 4px;
 }
@@ -504,160 +571,20 @@ body {
     background: #a8a8a8;
 }
 
-/* Эффекты при наведении */
-.sidebar__link:hover .sidebar__icon {
-    background: #FF9500;
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
 }
 
-.sidebar__link:hover .sidebar__icon img {
-    filter: brightness(0) invert(1);
-    opacity: 1;
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
 }
 
-/* 3 карточки старт */
-/* ABOUT SECTION STYLES */
-.about-section {
-    padding: 80px 0;
-    background: linear-gradient(#000000, #01042d);
-    font-family: 'RobotoSerif', sans-serif;
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
 }
 
-.about-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.about-card {
-    width: 280px;
-    min-height: 350px;
-    cursor: pointer;
-    position: relative;
-    background-color: #040a20;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-}
-
-.about-card:hover {
-    transform: translateY(-10px);
-}
-
-.about-card:before {
-    content: "";
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    background-color: #fff;
-    transform: skew(2deg, 2deg);
-    z-index: -1;
-}
-
-.about-card:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.06);
-}
-
-.about-card:nth-child(1):before {
-    background: linear-gradient(#ff0000, #0037ff);
-}
-
-.about-card:nth-child(2):before {
-    background: linear-gradient(#d8ff00, #17f4ff);
-}
-
-.about-card:nth-child(3):before {
-    background: linear-gradient(#af36ff, #ff0070);
-}
-
-.about-content {
-    position: relative;
-    padding: 30px;
-    color: #fff;
-    z-index: 2;
-}
-
-.about-content h3 {
-    margin: 0 0 15px;
-    font-size: 22px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    color: #fff;
-    font-family: 'RobotoSerif', sans-serif;
-}
-
-.about-content p {
-    margin: 0;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'RobotoSerif', sans-serif;
-}
-
-/* Только для второй карточки меняем цвет текста при наведении */
-.about-card:nth-child(2):hover .about-content h3 {
-    color: #000;
-    /* Черный цвет для заголовка */
-}
-
-.about-card:nth-child(2):hover .about-content p {
-    color: #333;
-    /* Темно-серый цвет для текста */
-}
-
-.about-content button {
-    cursor: pointer;
-    position: relative;
-    margin: 25px 0 0;
-    padding: 12px 25px;
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    transition: all 0.5s ease;
-    transform: translateY(-40px);
-    opacity: 0;
-    visibility: hidden;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-family: 'RobotoSerif', sans-serif;
-    z-index: 1;
-}
-
-.about-card:hover .about-content button {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-}
-
-.about-content button:hover {
-    color: #000;
-    background-color: #fff;
-    border-color: #fff;
-}
-
-/* Отступ между секциями и скругление углов */
-.catalog-section {
-    margin-bottom: 60px;
-}
-
-.about-section {
-    border-radius: 20px 20px 20px 20px;
-    overflow: hidden;
-    margin-top: 20px;
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
 }

@@ -262,8 +262,7 @@ body {
 
 .footer {
     margin-top: auto;
-    /* background: #373841; */
-    background: linear-gradient(to top, #000000, #01042d);
+    background: #373841;
     padding: 25px 15px;
     color: #fff;
 }
@@ -515,6 +514,7 @@ body {
 }
 
 /* 3 карточки старт */
+
 /* ABOUT SECTION STYLES */
 .about-section {
     padding: 80px 0;
@@ -534,7 +534,7 @@ body {
 
 .about-card {
     width: 280px;
-    min-height: 350px;
+    min-height: 400px;
     cursor: pointer;
     position: relative;
     background-color: #040a20;
@@ -590,6 +590,24 @@ body {
     z-index: 2;
 }
 
+.about-content h2 {
+    position: absolute;
+    top: -60px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    font-size: 140px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.06);
+    transition: 0.5s ease;
+    font-family: 'RobotoSerif', sans-serif;
+    font-weight: 700;
+}
+
+.about-card:hover .about-content h2 {
+    top: -120px;
+}
+
 .about-content h3 {
     margin: 0 0 15px;
     font-size: 22px;
@@ -606,17 +624,6 @@ body {
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
     font-family: 'RobotoSerif', sans-serif;
-}
-
-/* Только для второй карточки меняем цвет текста при наведении */
-.about-card:nth-child(2):hover .about-content h3 {
-    color: #000;
-    /* Черный цвет для заголовка */
-}
-
-.about-card:nth-child(2):hover .about-content p {
-    color: #333;
-    /* Темно-серый цвет для текста */
 }
 
 .about-content button {
@@ -651,13 +658,79 @@ body {
     border-color: #fff;
 }
 
-/* Отступ между секциями и скругление углов */
-.catalog-section {
-    margin-bottom: 60px;
+/* RESPONSIVE STYLES FOR ABOUT SECTION */
+@media (max-width: 991px) {
+    .about-container {
+        gap: 30px;
+    }
+
+    .about-card {
+        width: 250px;
+        min-height: 380px;
+    }
+
+    .about-content h2 {
+        font-size: 120px;
+    }
 }
 
-.about-section {
-    border-radius: 20px 20px 20px 20px;
-    overflow: hidden;
-    margin-top: 20px;
+@media (max-width: 767px) {
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .about-card {
+        width: 280px;
+        min-height: 350px;
+    }
+
+    .about-content {
+        padding: 25px;
+    }
+
+    .about-content h2 {
+        font-size: 100px;
+        top: -50px;
+    }
+
+    .about-card:hover .about-content h2 {
+        top: -90px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        padding: 40px 0;
+    }
+
+    .about-card {
+        width: 260px;
+        min-height: 320px;
+    }
+
+    .about-content {
+        padding: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 80px;
+        top: -40px;
+    }
+
+    .about-content h3 {
+        font-size: 20px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+    }
+
+    .about-card:hover .about-content h2 {
+        top: -70px;
+    }
 }

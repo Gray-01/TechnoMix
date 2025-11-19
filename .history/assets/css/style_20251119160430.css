@@ -262,8 +262,7 @@ body {
 
 .footer {
     margin-top: auto;
-    /* background: #373841; */
-    background: linear-gradient(to top, #000000, #01042d);
+    background: #373841;
     padding: 25px 15px;
     color: #fff;
 }
@@ -651,13 +650,57 @@ body {
     border-color: #fff;
 }
 
-/* Отступ между секциями и скругление углов */
-.catalog-section {
-    margin-bottom: 60px;
+/* RESPONSIVE STYLES FOR ABOUT SECTION */
+@media (max-width: 991px) {
+    .about-container {
+        gap: 30px;
+    }
+
+    .about-card {
+        width: 250px;
+        min-height: 320px;
+    }
 }
 
-.about-section {
-    border-radius: 20px 20px 20px 20px;
-    overflow: hidden;
-    margin-top: 20px;
+@media (max-width: 767px) {
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .about-card {
+        width: 280px;
+        min-height: 300px;
+    }
+
+    .about-content {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        padding: 40px 0;
+    }
+
+    .about-card {
+        width: 260px;
+        min-height: 280px;
+    }
+
+    .about-content {
+        padding: 20px;
+    }
+
+    .about-content h3 {
+        font-size: 20px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+    }
 }

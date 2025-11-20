@@ -104,24 +104,6 @@
     .about-section {
         border-radius: 15px 15px 0 0;
     }
-
-    /* Gradient buttons section for tablets */
-    .gradient-buttons-section {
-        padding: 60px 0;
-        border-radius: 15px;
-        margin: 40px 0;
-    }
-
-    .buttons-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
-    .gradient-btn {
-        padding: 18px 20px;
-        height: 75px;
-        font-size: 15px;
-    }
 }
 
 /* Мобильные (577px - 767px) */
@@ -223,25 +205,6 @@
 
     .about-content {
         padding: 25px;
-    }
-
-    /* Gradient buttons section for mobile */
-    .gradient-buttons-section {
-        padding: 50px 0;
-        border-radius: 12px;
-        margin: 30px 0;
-    }
-
-    .buttons-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 400px;
-    }
-
-    .gradient-btn {
-        padding: 16px 20px;
-        height: 70px;
-        font-size: 14px;
     }
 }
 
@@ -347,26 +310,6 @@
     .about-content p {
         font-size: 13px;
     }
-
-    /* Gradient buttons section for small mobile */
-    .gradient-buttons-section {
-        padding: 40px 0;
-        border-radius: 10px;
-        margin: 20px 0;
-    }
-
-    .buttons-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        max-width: 300px;
-    }
-
-    .gradient-btn {
-        padding: 14px 18px;
-        height: 65px;
-        font-size: 13px;
-        min-width: auto;
-    }
 }
 
 /* Очень маленькие экраны (до 375px) */
@@ -416,19 +359,6 @@
     .about-section {
         border-radius: 8px 8px 0 0;
     }
-
-    /* Gradient buttons section for very small screens */
-    .gradient-buttons-section {
-        padding: 30px 0;
-        border-radius: 8px;
-        margin: 15px 0;
-    }
-
-    .gradient-btn {
-        padding: 12px 15px;
-        height: 60px;
-        font-size: 12px;
-    }
 }
 
 /* Высокие экраны (мин. высота 800px) */
@@ -463,14 +393,12 @@
     .sidebar__text {
         font-size: 12px;
     }
+}
 
-    .gradient-buttons-section {
-        padding: 25px 0;
-    }
-
-    .gradient-btn {
-        height: 55px;
-        padding: 10px 15px;
+/* Адаптация для карусели на разных экранах */
+@media (max-width: 767px) {
+    .carousel__inner {
+        /* Для корректной работы JS на мобильных */
     }
 }
 
@@ -497,12 +425,6 @@
     .about-card:hover {
         transform: translateY(-10px);
     }
-
-    .gradient-btn:hover {
-        background-position: right;
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    }
 }
 
 /* Для тач-устройств */
@@ -527,11 +449,5 @@
 
     .about-card:active {
         transform: translateY(-5px);
-    }
-
-    .gradient-btn:active {
-        background-position: right;
-        transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     }
 }

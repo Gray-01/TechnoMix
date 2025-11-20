@@ -306,6 +306,7 @@ body {
 .main {
     flex: 1 0 auto;
     padding: 40px 260px;
+    border: 1px solid red;
 }
 
 /* ограничивающий контейнер внутри main */
@@ -313,6 +314,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    border: 1px solid green;
 }
 
 
@@ -658,76 +660,4 @@ body {
     border-radius: 20px 20px 20px 20px;
     overflow: hidden;
     margin-top: 20px;
-}
-
-/* 4 кнопки с градиентом start */
-
-/* Gradient Buttons Section */
-.gradient-buttons-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #0a0f2b 0%, #1a237e 50%, #0a0f2b 100%);
-    border-radius: 20px;
-    margin: 60px 0;
-}
-
-.buttons-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gradient-btn {
-    min-width: 200px;
-    border: none;
-    cursor: pointer;
-    font-family: 'RobotoSerif', sans-serif;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-    padding: 20px 25px;
-    border-radius: 15px;
-    background-size: 220%;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s ease;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.gradient-btn:hover {
-    background-position: right;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Цвета кнопок с градиентами */
-.btn-tech {
-    background-image: linear-gradient(45deg, #2196F3, #9C27B0, #2196F3);
-}
-
-.btn-gadgets {
-    background-image: linear-gradient(45deg, #FF9800, #E91E63, #FF9800);
-}
-
-.btn-kitchen {
-    background-image: linear-gradient(45deg, #4CAF50, #00BCD4, #4CAF50);
-}
-
-.btn-entertainment {
-    background-image: linear-gradient(45deg, #FF5722, #673AB7, #FF5722);
-}
-
-.btn-computers {
-    background-image: linear-gradient(45deg, #607D8B, #795548, #607D8B);
-}
-
-.btn-audio {
-    background-image: linear-gradient(45deg, #9C27B0, #FF4081, #9C27B0);
 }

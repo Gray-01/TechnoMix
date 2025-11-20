@@ -306,6 +306,7 @@ body {
 .main {
     flex: 1 0 auto;
     padding: 40px 260px;
+    border: 1px solid red;
 }
 
 /* ограничивающий контейнер внутри main */
@@ -313,6 +314,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    border: 1px solid green;
 }
 
 
@@ -707,7 +709,7 @@ body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Цвета кнопок с градиентами */
+/* Цвета кнопок соответствующие тематике магазина */
 .btn-tech {
     background-image: linear-gradient(45deg, #2196F3, #9C27B0, #2196F3);
 }
@@ -722,12 +724,4 @@ body {
 
 .btn-entertainment {
     background-image: linear-gradient(45deg, #FF5722, #673AB7, #FF5722);
-}
-
-.btn-computers {
-    background-image: linear-gradient(45deg, #607D8B, #795548, #607D8B);
-}
-
-.btn-audio {
-    background-image: linear-gradient(45deg, #9C27B0, #FF4081, #9C27B0);
 }

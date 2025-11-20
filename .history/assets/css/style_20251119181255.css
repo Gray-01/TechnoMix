@@ -306,6 +306,7 @@ body {
 .main {
     flex: 1 0 auto;
     padding: 40px 260px;
+    border: 1px solid red;
 }
 
 /* ограничивающий контейнер внутри main */
@@ -313,6 +314,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    border: 1px solid green;
 }
 
 
